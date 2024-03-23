@@ -15,6 +15,11 @@ section {
   padding: 1rem 1rem;
 }
 
+.text-h0 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
 .text-h1 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -22,8 +27,11 @@ section {
 
 .text-h2 {
   font-size: 1.1rem;
-  font-weight: 400;
-  
+  font-weight: 500;
+}
+
+.grey {
+  color: #495057;
 }
 
 .white {
@@ -45,9 +53,21 @@ section {
 .sidenav-container {
   width: 12%;
   min-width: 13rem;
-  padding: 0.5rem 0.5rem;
+  padding: 1rem 0.5rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 12px 2px 12px -10px rgb(0,0,0,0.06);
+  position: relative;
+  z-index: 10;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 /* .navbar-container {
@@ -64,26 +84,58 @@ section {
 /* Dashboard Component */
 .dashboard-container {
   background-color:#F4F2FD;
-  color: black;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  gap: 0.5rem;
+
+  /* color: black;
+  
   display: flex;
   flex-direction: row;
   gap: 1rem;
   flex-wrap: wrap;
-  overflow-y: scroll;
+  overflow-y: scroll; */
+}
+
+.db-header-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.grid-container {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(auto-rows, 1fr);
+  gap: 1rem;
+}
+
+.grid-long-2 {
+  grid-column: span 2;
+}
+
+.grid-long-3 {
+  grid-column: span 3;
 }
 
 .module-container {
   background-color: white;
-  padding: 0.5rem 0.5rem;
+  padding: 1rem 1rem;
   border: 0.2px solid rgb(0,0,0,0.1);
   border-radius: 10px;
-  flex: 1;
+  box-shadow: 1px 1px 1px 1px rgb(0,0,0,0.04);
+  /* flex: 1; */
 }
 
-.test {
-  min-width: 95%;
-} 
+/* Modules components */
+.datetime-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 /* Footer Component */
 /* .footer-container {
@@ -95,9 +147,8 @@ section {
 
 
 /* Media Settings */
-@media (width <= 1000px) {
-  .module-container {
-    min-width: 70%;
-    min-height: 40%;
+@media screen and (width <= 1000px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
   }
 }

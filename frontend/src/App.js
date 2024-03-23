@@ -1,18 +1,19 @@
 import React from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import UserLayout from "./layouts/UserLayout";
 
-function App() {
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path='/' element={<UserLayout />}>
+    <Route index element={<Dashboard />} />
+  </Route>
+))
+
+export default function App() {
   return (
-    <>
-      <div className="wrapper">
-        <Header />
-        <Main />
-        <Footer />
-      </div>
-    </>
+    <RouterProvider router={router}/>
   );
 }
 
-export default App;
+

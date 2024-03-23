@@ -1,9 +1,9 @@
-import News from "./News";
+import News from "../components/News";
 
-export default function Main() {
+export default function Dashboard() {
     return (
         <>
-            <section className="main-container">
+            <section className="dashboard-container">
                 <div className="module-container test">
                     <News />
                 </div>

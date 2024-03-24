@@ -18,3 +18,22 @@ export function useDateTimeLocalStorage() {
 
     return [value, setValue]
 }
+
+export function useNoteLocalStorage() {
+    const [value, setValue] = React.useState("")
+    const [init, setInit] = React.useState(false)
+    const note = localStorage.getItem("note")
+    
+    if (init === false) {
+        note !== null 
+            ? setValue(note) 
+            : setValue("")
+        setInit(true)
+    }
+
+    React.useEffect(() => {
+        localStorage.setItem("note", value)
+    }, [value])
+
+    return [value, setValue]
+}

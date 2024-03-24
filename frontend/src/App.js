@@ -5,6 +5,7 @@ import UserLayout from "./layouts/UserLayout";
 import { Details } from "./pages/Details";
 
 
+
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<UserLayout />}>
     <Route index element={<Dashboard />} />

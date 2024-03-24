@@ -1,4 +1,5 @@
 import News from "../../components/News";
+import DateAssistant from "./components/DateAssistant";
 import DateTime from "./components/DateTime";
 import Notes from "./components/Notes";
 
@@ -8,7 +9,7 @@ export default function Dashboard() {
     return (
         <section className="dashboard-container">
             <div className="db-header-text">
-                <span className="text-h0">Hey Kevin</span>
+                <span className="text-h0">Hey Kevin!</span>
                 <span className="text-h2">{date.toDateString()}</span>
             </div>
             <div className="grid-container">
@@ -19,7 +20,7 @@ export default function Dashboard() {
                     <Notes />
                 </div>
                 <div className="module-container grid-long-3">
-                    Date Assistant
+                    <DateAssistant />
                 </div>
                 <div className="module-container grid-long-3">
                     <News />

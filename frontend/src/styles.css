@@ -252,10 +252,12 @@ section {
   flex: 1;
 }
 
-/* .date-assistant-form {
-  max-width: 100%;
-  
-} */
+.date-assistant-form {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
 
 .date-assistant-input {
   width: 99%;
@@ -275,6 +277,29 @@ section {
 
 .date-assistant-input:focus {
   outline: 1px solid rgb(0,0,0,0.2);
+}
+
+.date-assistant-btn {
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(0,0,0,0.2);
+  padding: 1rem 1rem;
+  cursor: pointer;
+}
+
+.date-assistant-btn:hover{
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.date-assistant-btn:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }
 
 /* Footer Component */

@@ -1,12 +1,15 @@
 import express from "express";
-
+import dateAssistantRoute from "./routes/dateAssistantRoute.js"
 
 const app = express()
 
 app.use(express.json())
 
-app.get("/", (req,res) => {
-    res.status(200).json("api running")
+app.use("/api/assistant", dateAssistantRoute)
+
+
+app.get("/api", (req,res) => {
+    res.status(200).json("hello")
 })
 
 app.listen(5000, () => {

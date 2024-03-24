@@ -1,9 +1,10 @@
 import News from "../../components/News";
 import DateTime from "./components/DateTime";
+import Notes from "./components/Notes";
 
 export default function Dashboard() {
     const date = new Date()
-
+    
     return (
         <section className="dashboard-container">
             <div className="db-header-text">
@@ -15,7 +16,7 @@ export default function Dashboard() {
                     <DateTime />
                 </div>
                 <div className="module-container grid-long-2">
-                    Notes go here
+                    <Notes />
                 </div>
                 <div className="module-container grid-long-3">
                     Date Assistant

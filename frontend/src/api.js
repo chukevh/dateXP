@@ -8,6 +8,7 @@ export async function callDateAssistant(input) {
             }
         )
         const data = await res.json()
+
         return data
     } catch (error) {
         console.log(error.message)

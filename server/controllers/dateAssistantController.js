@@ -14,7 +14,7 @@ const callDateAssistant = async (req,res) => {
             response_format: { type: "json_object" },
         });
         //console.log("openai response: ", completion.choices[0].message.content)
-        const dateResponse = completion.choices[0].message.content
+        const dateResponse = JSON.parse(completion.choices[0].message.content)
 
         res.status(200).json(dateResponse)
         console.log("tokens used: ", completion.usage);
@@ -24,7 +24,7 @@ const callDateAssistant = async (req,res) => {
     }
 }
 
-const callDateRestaurants = (req,res) => {
+const callDateSpots = (req,res) => {
     res.status(200).json("These are the hottest date restaurants")
 }
 
@@ -34,6 +34,6 @@ const callDateActivities = (req,res) => {
 
 export {
     callDateAssistant,
-    callDateRestaurants,
+    callDateSpots,
     callDateActivities
 }

@@ -1,10 +1,10 @@
 import express from 'express'
-import { callDateActivities, callDateAssistant, callDateRestaurants } from '../controllers/dateAssistantController.js'
+import { callDateActivities, callDateAssistant, callDateSpots } from '../controllers/dateAssistantController.js'
 
 const router = express.Router()
 
 router.post("/", callDateAssistant)
-router.post("/restaurants", callDateRestaurants)
+router.post("/spots", callDateSpots)
 router.post("/activities", callDateActivities)
 
 export default router

@@ -11,8 +11,9 @@ const presets = {
             Return the response in JSON format like this:
 
             {
-                advice: <Dating Advice>
-            ]
+                role: assistant
+                message: <Dating Advice>
+            }
         `
     }
 }

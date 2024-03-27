@@ -1,7 +1,8 @@
 import News from "../../components/News";
-import DateAssistant from "./components/DateAssistant";
-import DateTime from "./components/DateTime";
-import Notes from "./components/Notes";
+import DateAssistant from "./modules/DateAssistant/DateAssistant";
+import DateSpots from "./modules/DateSpots/DateSpots";
+import DateTime from "./modules/DateTime";
+import Notes from "./modules/Notes";
 
 export default function Dashboard() {
     const date = new Date()
@@ -23,7 +24,7 @@ export default function Dashboard() {
                     <DateAssistant />
                 </div>
                 <div className="module-container grid-long-3">
-                    <News />
+                    <DateSpots />
                 </div>
                 <div className="module-container grid-long-3">
                     Date activities go here

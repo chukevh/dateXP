@@ -240,6 +240,7 @@ section {
   color: #c72c41;
 }
 
+
 /* Date Assistant */
 .date-assistant {
   display: flex;
@@ -248,8 +249,12 @@ section {
   flex: 1;
 }
 
-.date-assistant-text-container {
+.date-assistant-display {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* overflow-y: scroll; */
 }
 
 .date-assistant-form {
@@ -300,6 +305,85 @@ section {
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
+}
+
+
+/* Date Spots Module */
+.date-spots {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.date-spots-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-spots-btn-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.date-spots-btn {
+  background-color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 15px;
+  border: 1px solid rgb(0,0,0,0.2);
+}
+
+.date-spots-btn:hover{
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.date-spots-btn:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.date-spot-details-container {
+  height: 1.7rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  flex: 1;
+}
+
+.date-spots-submit-btn {
+  border-radius: 5px;
+  border: 1px solid rgb(0,0,0,0.2);
+  cursor: pointer;
+  padding: 0rem 0.5rem;
+}
+
+.date-spots-submit-btn:hover{
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.date-spots-submit-btn:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.date-spots-display {
+  flex: 1;
 }
 
 /* Footer Component */

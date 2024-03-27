@@ -1,36 +1,53 @@
 import React from "react"
-import { callDateAssistant } from "../../../api"
+import { callDateAssistant } from "../../../../api"
+import { DateAssistantDisplay } from "./components/DateAssistantDisplay"
 
 export default function DateAssistant() {
     const [input, setInput] = React.useState("")
-
-    // React.useEffect(() => {
-    //     callDateAssistant()
-    //         .then(data => console.log(data))
-    // }, [])
+    const [dateLog, setDateLog] = React.useState([
+        { 
+            role: "assistant",
+            message: "I'm your date assistant! How can I help you today?"
+        }
+    ])
 
     function handleChange(e) {
         setInput(e.target.value)
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault()
 
         if (input.trim().length > 0) {
-            console.log(input)
+            try {
+                const userLog = {
+                    role: "user",
+                    message: input
+                }
+                addToDateLog(userLog)
+                setInput("")
+                const data = await callDateAssistant(userLog.message)
+                addToDateLog(data) 
+            } catch (error) {
+                console.log(error)
+            }
         }
+    }
+
+    function addToDateLog(log) {
+        setDateLog(prevLog => {
+            return [
+                ...prevLog,
+                log
+            ]
+        })
     }
 
     return (
         <>
             <span className="text-h2">Date Assistant</span>
             <div className="date-assistant">
-                <div className="date-assistant-text-container">
-                    <span>
-                        I'm your date assistant! How can I help you today?
-                    </span>
-                </div>
-
+                <DateAssistantDisplay dateLog={dateLog}/>
                 <form className="date-assistant-form" onSubmit={handleSubmit}>
                     <textarea
                         className="date-assistant-input"

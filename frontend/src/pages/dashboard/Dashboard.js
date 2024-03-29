@@ -1,4 +1,4 @@
-import News from "../../components/News";
+//import News from "../../components/News";
 import DateAssistant from "./modules/DateAssistant/DateAssistant";
 import DateSpots from "./modules/DateSpots/DateSpots";
 import DateTime from "./modules/DateTime";

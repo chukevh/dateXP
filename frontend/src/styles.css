@@ -323,7 +323,7 @@ section {
 }
 
 .date-spots-btn-container {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -358,6 +358,29 @@ section {
   flex-direction: row;
   gap: 0.7rem;
   flex: 1;
+}
+
+.date-spots-form-location {
+  padding: 0 0.3rem;
+  flex:1;
+  max-width: 14rem;
+  border-radius: 4px;
+  border: 1px solid rgb(0,0,0,0.2);
+}
+
+.date-spots-form-select {
+  border-radius: 4px;
+  border: 1px solid rgb(0,0,0,0.2);
+}
+
+.date-spots-form-location:hover,
+.date-spots-form-select:hover {
+  outline: 1px solid rgb(0,0,0,0.1);
+}
+
+.date-spots-form-location:focus,
+.date-spots-form-select:focus {
+  outline: 1px solid rgb(0,0,0,0.5);
 }
 
 .date-spots-submit-btn {

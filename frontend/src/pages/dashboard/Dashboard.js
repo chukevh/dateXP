@@ -1,4 +1,5 @@
 //import News from "../../components/News";
+import DateActivities from "./modules/DateActivities/DateActivities";
 import DateAssistant from "./modules/DateAssistant/DateAssistant";
 import DateSpots from "./modules/DateSpots/DateSpots";
 import DateTime from "./modules/DateTime";
@@ -27,7 +28,7 @@ export default function Dashboard() {
                     <DateSpots />
                 </div>
                 <div className="module-container grid-long-3">
-                    Date activities go here
+                    <DateActivities />
                 </div>
             </div>
         </section>

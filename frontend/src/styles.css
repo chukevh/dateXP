@@ -26,7 +26,6 @@ section {
 .text-h1 {
   font-size: 1.5rem;
   font-weight: 500;
-  
 }
 
 .text-h2 {
@@ -38,6 +37,10 @@ section {
 .text-h3 {
   font-size: 1rem;
   font-weight: 500;
+}
+
+.text-small {
+  font-size: 0.95rem;
 }
 
 .grey {
@@ -406,7 +409,32 @@ section {
 }
 
 .date-spots-display {
+  padding-top: 0.5rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.date-spot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.display-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  gap: 1rem;
+}
+
+.display-img {
+  max-height: 13rem;
+  border-radius: 10px;
 }
 
 /* Footer Component */

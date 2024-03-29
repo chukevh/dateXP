@@ -2,4 +2,14 @@ interface userMessage {
     message: string
 }
 
-export default userMessage
+interface userDateSpotMessage {
+    location: string
+    time: string
+    like: []
+    dislike: []
+}
+
+export {
+    userMessage,
+    userDateSpotMessage
+}

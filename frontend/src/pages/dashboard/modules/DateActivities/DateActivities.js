@@ -1,32 +1,30 @@
 import React from "react";
 import CuisineButtons from "./components/CusineButtons";
-import DateSpotsDisplay from "./components/DateSpotsDisplay";
 import Autocomplete from "react-google-autocomplete";
 import { filterButtons } from "../../../../utils";
-import { callDateSpots } from "../../../../api";
+import { callDateActivities, callDateSpots } from "../../../../api";
+import DateActivityDisplay from "./components/DateActivityDisplay";
 
-export default function DateSpots() {
-    const cuisineList = [
-        "thai",
-        "japanese",
-        "korean",
-        "italian",
-        "french",
-        "steakhouse",
-        "seafood",
-        "bars",
-        "vegetarian"
+export default function DateActivities() {
+    const activityList = [
+        "Arts and Culture",
+        "Outdoor",
+        "Gaming",
+        "Puzzles",
+        "Theater",
+        "Sports",
+        "Culinary"
     ]
 
-    let cuisineBtnStateList = {}
-    cuisineList.forEach((cuisine) => {
-        cuisineBtnStateList = {
-            ...cuisineBtnStateList,
-            [cuisine]: "default"
+    let activityBtnStateList = {}
+    activityList.forEach((activity) => {
+        activityBtnStateList = {
+            ...activityBtnStateList,
+            [activity]: "default"
         }
     })
-    const [cuisineBtnState, setCuisineBtnState] = React.useState(cuisineBtnStateList)
-    const [dateSpotsData, setDateSpotsDate] = React.useState([])
+    const [activityBtnState, setActivityBtnState] = React.useState(activityBtnStateList)
+    const [dateActivityData, setDateActivityData] = React.useState([])
     const [form, setForm] = React.useState({
         location: "Sydney, NSW",
         time: "week"
@@ -65,7 +63,7 @@ export default function DateSpots() {
                 newValue = "default"
                 break
         }
-        setCuisineBtnState(prevState => {
+        setActivityBtnState(prevState => {
             return {
                 ...prevState,
                 [name]: newValue
@@ -74,7 +72,7 @@ export default function DateSpots() {
     }
 
     function handleClear() {
-        setCuisineBtnState(cuisineBtnStateList)
+        setActivityBtnState(activityBtnStateList)
     }
 
     async function handleSubmit(e) {
@@ -82,21 +80,21 @@ export default function DateSpots() {
 
         const input = {
             ...form,
-            ...filterButtons(cuisineBtnState)
+            ...filterButtons(activityBtnState)
         }
 
-        const data = await callDateSpots(input)
-        setDateSpotsDate(data.restaurants)
+        const data = await callDateActivities(input)
+        setDateActivityData(data.activities)
     }
 
     return (
         <>
-            <span className="text-h2">Date Spots</span>
+            <span className="text-h2">Date Activities</span>
             <div className="date-spots">
                 <form className="date-spots-form">
                     <CuisineButtons 
-                        cuisineList={cuisineList} 
-                        cuisineBtnState={cuisineBtnState}
+                        cuisineList={activityList} 
+                        cuisineBtnState={activityBtnState}
                         handleButtonClick={handleButtonClick}
                     />
                     <div className="date-spot-details-container">
@@ -131,7 +129,7 @@ export default function DateSpots() {
                         </button>
                     </div>
                 </form>
-                <DateSpotsDisplay dateSpotsData={dateSpotsData}/>
+                <DateActivityDisplay dateActivityData={dateActivityData}/>
             </div>
         </>
     )

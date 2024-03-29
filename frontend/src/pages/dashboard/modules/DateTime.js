@@ -34,7 +34,11 @@ export default function DateTime() {
                     <span className="">{dateTimer} seconds</span>
                 </div>
 
-                <img src={gif} className="datetime-img"/>
+                <img 
+                    src={gif} 
+                    alt="Missing my partner"
+                    className="datetime-img"
+                />
                 <button onClick={handleClick} className="datetime-btn primary-bg">Reset</button>
             </div>
         </>

@@ -2,7 +2,7 @@ import React from "react";
 import CuisineButtons from "./components/CusineButtons";
 import Autocomplete from "react-google-autocomplete";
 import { filterButtons } from "../../../../utils";
-import { callDateActivities, callDateSpots } from "../../../../api";
+import { callDateActivities } from "../../../../api";
 import DateActivityDisplay from "./components/DateActivityDisplay";
 
 export default function DateActivities() {

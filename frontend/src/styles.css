@@ -356,9 +356,10 @@ section {
 }
 
 .date-spot-details-container {
-  height: 1.7rem;
+  min-height: 2rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.7rem;
   flex: 1;
 }

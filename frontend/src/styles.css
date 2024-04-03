@@ -66,33 +66,73 @@ section {
 .sidenav-container {
   width: 12%;
   min-width: 13rem;
-  padding: 1rem 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
   box-shadow: 12px 2px 12px -10px rgb(0,0,0,0.06);
   position: relative;
   z-index: 10;
 }
 
-.sidenav {
+.sidenav-logo-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: center;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid rgb(0,0,0,0.15);
 }
 
-/* .navbar-container {
-  background-color: white;
-  min-height: 3vh;
-  text-align: center;
+.logo {
+  max-width: 150px;
+}
+
+.sidenav-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.7rem;
+  padding-left: 2.2rem;
+}
+
+.side-nav-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 2.2rem;
+  margin-top: auto;
+}
+
+.sidenav-link-logo {
+  padding-top: 0.3rem;
+  color: rgb(0,0,0,0.3);
+}
+
+.sidenav-link {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  padding: 1rem 1rem;
-  box-shadow: 2px 2px 2px 3px rgb(0,0,0,0.06);
-  position: relative;
-  z-index: 10;
-} */
+  gap: 0.5rem;
+}
+
+.sidenav-link a:link, a:visited {
+  text-decoration: none;
+  color: rgb(0,0,0,0.6);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.sidenav-link a:hover {
+  color: rgb(0,0,0,0.4);
+  transform: translateY(-1px);
+}
+
+
+
+
+
 
 /* Dashboard Component */
 .dashboard-container {

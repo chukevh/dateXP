@@ -1,1 +1,0 @@
-{"version":3,"file":"promptPresets.js","sourceRoot":"","sources":["../../src/utils/promptPresets.ts"],"names":[],"mappings":"AAGA,MAAM,OAAO,GAA+C;IACxD,gBAAgB,EAAE;QACd,IAAI,EAAE,QAAQ;QACd,OAAO,EAAE;;SAER;KACJ;IACD,uBAAuB,EAAE;QACrB,IAAI,EAAE,QAAQ;QACd,OAAO,EAAE;;;;;;;SAOR;KACJ;CACJ,CAAA;AAED,eAAe,OAAO,CAAA"}

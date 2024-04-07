@@ -1,0 +1,33 @@
+name: datexp
+
+services:
+    backend:
+        container_name: datexp-backend
+        build: 
+          context: ./server
+          dockerfile: Dockerfile
+        ports:
+            - 5000:5000
+        restart: unless-stopped
+        env_file:
+            - ./server/.env
+        networks:
+            - datexp
+        image: datexp-server
+    frontend:
+        container_name: datexp-frontend
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - 4000:8080
+        restart: unless-stopped
+        env_file:
+            - ./frontend/.env
+        networks:
+            - datexp
+        image: date-exp-frontend
+networks:
+    datexp:
+        name: datexp
+

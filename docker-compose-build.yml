@@ -3,6 +3,9 @@ name: datexp
 services:
     backend:
         container_name: datexp-backend
+        build: 
+          context: ./server
+          dockerfile: Dockerfile
         ports:
             - 5000:5000
         restart: unless-stopped
@@ -13,6 +16,11 @@ services:
         image: datexp-server
     frontend:
         container_name: datexp-frontend
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+            args:
+                REACT_APP_GOOGLE_API_KEY: AIzaSyAhVxOU7tYYqsVGFSJXMbbTnNRfT-CjP8w
         ports:
             - 80:8080
         restart: unless-stopped

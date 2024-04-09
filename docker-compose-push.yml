@@ -1,0 +1,9 @@
+name: datexp-push
+
+services:
+  backend:
+    build: /server/.
+    image: chukevh/datexp-server
+  frontend:
+    build: /frontend/.
+    image: chukevh/datexp-frontend

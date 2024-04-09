@@ -25,12 +25,15 @@ export default function DateSpots() {
             [cuisine]: "default"
         }
     })
+
     const [cuisineBtnState, setCuisineBtnState] = React.useState(cuisineBtnStateList)
     const [dateSpotsData, setDateSpotsDate] = React.useState([])
     const [form, setForm] = React.useState({
         location: "Sydney, NSW",
-        time: "week"
+        time: "week",
+        isSubmit: false
     })
+
 
     function handleLocation(location) {
         setForm(prevForm => {
@@ -79,6 +82,12 @@ export default function DateSpots() {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        setForm(prevForm => {
+            return {
+                ...prevForm,
+                isSubmit: true
+            }
+        })
 
         const input = {
             ...form,
@@ -87,6 +96,13 @@ export default function DateSpots() {
 
         const data = await callDateSpots(input)
         setDateSpotsDate(data.restaurants)
+
+        setForm(prevForm => {
+            return {
+                ...prevForm,
+                isSubmit: false
+            }
+        })
     }
 
     return (
@@ -118,6 +134,7 @@ export default function DateSpots() {
                         <button 
                             type="submit" 
                             onClick={handleSubmit}
+                            disabled={form.isSubmit}
                             className="date-spots-submit-btn"
                         >
                             Submit
@@ -131,7 +148,10 @@ export default function DateSpots() {
                         </button>
                     </div>
                 </form>
-                <DateSpotsDisplay dateSpotsData={dateSpotsData}/>
+                <DateSpotsDisplay 
+                    dateSpotsData={dateSpotsData} 
+                    isSubmit={form.isSubmit}
+                />
             </div>
         </>
     )

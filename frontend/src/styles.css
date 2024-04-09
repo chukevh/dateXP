@@ -476,6 +476,16 @@ section {
   border-radius: 10px;
 }
 
+/* Components */
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1
+}
+
 /* Footer Component */
 /* .footer-container {
   text-align: center;

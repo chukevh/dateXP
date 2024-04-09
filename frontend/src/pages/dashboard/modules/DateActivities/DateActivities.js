@@ -27,7 +27,8 @@ export default function DateActivities() {
     const [dateActivityData, setDateActivityData] = React.useState([])
     const [form, setForm] = React.useState({
         location: "Sydney, NSW",
-        time: "week"
+        time: "week",
+        isSubmit: false
     })
 
     function handleLocation(location) {
@@ -77,6 +78,12 @@ export default function DateActivities() {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        setForm(prevForm => {
+            return {
+                ...prevForm,
+                isSubmit: true
+            }
+        })
 
         const input = {
             ...form,
@@ -85,6 +92,13 @@ export default function DateActivities() {
 
         const data = await callDateActivities(input)
         setDateActivityData(data.activities)
+
+        setForm(prevForm => {
+            return {
+                ...prevForm,
+                isSubmit: false
+            }
+        })
     }
 
     return (
@@ -116,6 +130,7 @@ export default function DateActivities() {
                         <button 
                             type="submit" 
                             onClick={handleSubmit}
+                            disabled={form.isSubmit}
                             className="date-spots-submit-btn"
                         >
                             Submit
@@ -129,7 +144,10 @@ export default function DateActivities() {
                         </button>
                     </div>
                 </form>
-                <DateActivityDisplay dateActivityData={dateActivityData}/>
+                <DateActivityDisplay 
+                    dateActivityData={dateActivityData} 
+                    isSubmit={form.isSubmit}
+                />
             </div>
         </>
     )

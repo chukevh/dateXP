@@ -7,11 +7,8 @@ export default function UserLayout() {
     return (
         <>
             <div className="wrapper">
-                <SideNav />
+                <SideNav /> 
                 <Outlet />
-                {/* <div className="main-container">
-                
-                </div> */}
             </div>
         </>
     )

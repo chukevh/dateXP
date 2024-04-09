@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/datexplogo.png"
-import { IoMdHeart, IoMdHelpCircle, IoMdHome, IoMdLogIn, IoMdPerson, IoMdSettings } from "react-icons/io";
+import { IoMdHeart, IoMdHelpCircle, IoMdHome, IoMdLogIn, IoMdPerson, IoMdSettings, IoMdMenu } from "react-icons/io";
 import SideNavLink from "./SideNavLink";
 
 
@@ -9,6 +9,7 @@ export default function SideNav() {
 
     return (
         <div className="sidenav-container">
+            <button><IoMdMenu /></button>
             <div className="sidenav-logo-container">
                 <Link to="/">
                     <img src={logo} alt="logo" className="logo"/>

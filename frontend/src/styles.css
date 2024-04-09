@@ -137,7 +137,6 @@ section {
   flex-direction: column;
   flex: 1;
   gap: 0.5rem;
-
   /* color: black;
   
   display: flex;
@@ -404,11 +403,13 @@ section {
   padding: 0 0.3rem;
   flex:1;
   max-width: 14rem;
+  min-height: 2rem;
   border-radius: 4px;
   border: 1px solid rgb(0,0,0,0.2);
 }
 
 .date-spots-form-select {
+  min-height: 2rem;
   border-radius: 4px;
   border: 1px solid rgb(0,0,0,0.2);
 }
@@ -424,6 +425,7 @@ section {
 }
 
 .date-spots-submit-btn {
+  min-height: 2rem;
   border-radius: 5px;
   border: 1px solid rgb(0,0,0,0.2);
   cursor: pointer;
@@ -486,7 +488,12 @@ section {
 /* Media Settings */
 @media screen and (width <= 1000px) {
   .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    display: flex;
+    flex-direction: column;
+  }
+
+  .module-container {
+    min-height:50vh;
   }
 }
 

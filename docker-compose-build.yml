@@ -13,7 +13,7 @@ services:
             - ./server/.env
         networks:
             - datexp
-        image: datexp-server
+        image: chukevh/datexp-server
     frontend:
         container_name: datexp-frontend
         build:
@@ -28,7 +28,7 @@ services:
             - ./frontend/.env
         networks:
             - datexp
-        image: datexp-frontend
+        image: chukevh/datexp-frontend
 networks:
     datexp:
         name: datexp

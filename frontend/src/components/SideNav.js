@@ -9,7 +9,7 @@ export default function SideNav() {
 
     return (
         <div className="sidenav-container">
-            <button><IoMdMenu /></button>
+            {/* <button><IoMdMenu /></button> */}
             <div className="sidenav-logo-container">
                 <Link to="/">
                     <img src={logo} alt="logo" className="logo"/>
@@ -17,7 +17,7 @@ export default function SideNav() {
             </div>
             <nav className="sidenav-main">
                 <SideNavLink logo={<IoMdHome size={logoSize}/>} title="Dashboard" link="/"/>
-                <SideNavLink logo={<IoMdHeart size={logoSize}/>} title="Matches" link="/details"/>
+                <SideNavLink logo={<IoMdHeart size={logoSize}/>} title="Matches" link="/"/>
                 <SideNavLink logo={<IoMdSettings size={logoSize}/>} title="Settings" link="/"/>
             </nav>
             <nav className="side-nav-footer">

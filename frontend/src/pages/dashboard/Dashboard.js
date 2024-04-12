@@ -11,7 +11,7 @@ export default function Dashboard() {
     return (
         <section className="dashboard-container">
             <div className="db-header-text">
-                <span className="text-h0">Hey Kevin!</span>
+                <span className="text-h0">Welcome!</span>
                 <span className="text-h2">{date.toDateString()}</span>
             </div>
             <div className="grid-container">

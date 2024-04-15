@@ -31,6 +31,7 @@ export default function DateSpots() {
     const [form, setForm] = React.useState({
         location: "Sydney, NSW",
         time: "week",
+        price: "",
         isSubmit: false
     })
 
@@ -104,6 +105,7 @@ export default function DateSpots() {
             }
         })
     }
+    console.log(form)
 
     return (
         <>
@@ -130,6 +132,25 @@ export default function DateSpots() {
                             <option value="week">This Week</option>
                             <option value="month">This Month</option>
                             <option value="year">This Year</option>
+                        </select>
+                        <select 
+                            name="price" 
+                            className="date-spots-form-select" 
+                            onChange={handleChange}
+                            value={form.price}
+                            required
+                        >
+                            <option 
+                                value="" 
+                                disabled 
+                                selected 
+                                hidden
+                            > 
+                                Price
+                            </option>
+                            <option value="$">$</option>
+                            <option value="$$">$$</option>
+                            <option value="$$$">$$$</option>
                         </select>
                         <button 
                             type="submit" 

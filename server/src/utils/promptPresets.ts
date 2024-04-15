@@ -23,7 +23,7 @@ const systemDateAdviceContext: ChatCompletionSystemMessageParam = {
 const systemDateSpotsContext: ChatCompletionSystemMessageParam = {
     role: "system",
     content: `
-        You are taking your partner out for a dinner date. Pick 4 of the best trending restaurants that are mid priced. Return the response in JSON format like below:
+        You are taking your partner out for a dinner date. Pick 4 of the best trending restaurants. Return the response in JSON format like below:
 
         [
             {
@@ -60,6 +60,9 @@ function createUserDateSpotContext(
 
             Pick restaurants trending in the last: 
             ${userMessage.time}
+
+            Price range should be:
+            ${userMessage.price}
         `
     }
 
@@ -106,6 +109,9 @@ function createUserDateActivityContext(
 
             Pick restaurants trending in the last: 
             ${userMessage.time}
+
+            Price range should be:
+            ${userMessage.price}
         `
     }
 

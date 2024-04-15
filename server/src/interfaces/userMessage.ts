@@ -7,6 +7,7 @@ interface userDateSpotMessage {
     time: string
     like: []
     dislike: []
+    price: string
 }
 
 export {

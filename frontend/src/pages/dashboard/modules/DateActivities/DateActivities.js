@@ -28,6 +28,7 @@ export default function DateActivities() {
     const [form, setForm] = React.useState({
         location: "Sydney, NSW",
         time: "week",
+        price: "$",
         isSubmit: false
     })
 
@@ -126,6 +127,16 @@ export default function DateActivities() {
                             <option value="week">This Week</option>
                             <option value="month">This Month</option>
                             <option value="year">This Year</option>
+                        </select>
+                        <select 
+                            name="price" 
+                            className="date-spots-form-select" 
+                            onChange={handleChange}
+                            value={form.price}
+                        >
+                            <option value="$">$</option>
+                            <option value="$$">$$</option>
+                            <option value="$$$">$$$</option>
                         </select>
                         <button 
                             type="submit" 

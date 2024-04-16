@@ -31,7 +31,7 @@ export default function DateSpots() {
     const [form, setForm] = React.useState({
         location: "Sydney, NSW",
         time: "week",
-        price: "",
+        price: "$",
         isSubmit: false
     })
 
@@ -119,7 +119,7 @@ export default function DateSpots() {
                     />
                     <div className="date-spot-details-container">
                         <Autocomplete
-                        className="date-spots-form-location"
+                            className="date-spots-form-location"
                             apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                             onPlaceSelected={(location) => handleLocation(location)}
                         />
@@ -138,16 +138,15 @@ export default function DateSpots() {
                             className="date-spots-form-select" 
                             onChange={handleChange}
                             value={form.price}
-                            required
+                            // required
                         >
-                            <option 
+                            {/* <option 
                                 value="" 
                                 disabled 
-                                selected 
                                 hidden
                             > 
                                 Price
-                            </option>
+                            </option> */}
                             <option value="$">$</option>
                             <option value="$$">$$</option>
                             <option value="$$$">$$$</option>

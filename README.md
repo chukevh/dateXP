@@ -3,7 +3,7 @@ This project is currently in progress.
 
 *Not all features are working*
 
-A live demo of this project can be found [here]([https://www.date-xp.com/])
+A live demo of this project can be found [here](https://www.date-xp.com/)
 
 
 ## Available Scripts

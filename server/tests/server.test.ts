@@ -1,7 +1,6 @@
 import request from 'supertest'
 import app from '../src/app.js'
 import "dotenv/config"
-import parseJson from './utils.js'
 
 describe('/api/assistant', () => {
     let server: any
@@ -13,16 +12,17 @@ describe('/api/assistant', () => {
         server.close()
     })
 
-    it('should test calling the assistant', async() => {
+    it('should send status code 200 and a JSON body on succesful call', async() => {
         const response = await request(app)
             .post("/api/assistant")
             .send({
                 message: "Hey"
             })
         expect(response.statusCode).toBe(200)
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
     })
 
-    it('should fail on empty body', async() => {
+    it('should send status code 500 when user input is empty', async() => {
         const response = await request(app)
         .post("/api/assistant")
     expect(response.statusCode).toBe(500)
@@ -39,7 +39,7 @@ describe('/api/assistant/spots', () => {
         server.close()
     })
 
-    it('should test calling date spots', async() => {
+    it('should send status code 200 and a JSON body on succesful call', async() => {
         const response = await request(app)
             .post("/api/assistant/spots")
             .send({
@@ -52,9 +52,10 @@ describe('/api/assistant/spots', () => {
                 }
             })
         expect(response.statusCode).toBe(200)
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
     }, 10000)
 
-    it('should fail date spots call on empty body', async() => {
+    it('should send status code 500 when user input is empty', async() => {
         const response = await request(app)
             .post("/api/assistant/spots")
         expect(response.statusCode).toBe(500)
@@ -71,7 +72,7 @@ describe('/api/assistant/activities', () => {
         server.close()
     })
 
-    it('should test calling date activities', async() => {
+    it('should send status code 200 and a JSON body on succesful call', async() => {
         const response = await request(app)
             .post("/api/assistant/activities")
             .send({
@@ -84,9 +85,10 @@ describe('/api/assistant/activities', () => {
                 }
             })
         expect(response.statusCode).toBe(200)
+        expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
     }, 10000)
 
-    it('should fail date activities call on empty body', async() => {
+    it('should send status code 500 when user input is empty', async() => {
         const response = await request(app)
             .post("/api/assistant/activities")
         expect(response.statusCode).toBe(500)

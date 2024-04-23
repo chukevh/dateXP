@@ -1,6 +1,6 @@
 export async function callDateAssistant(input: string) {
     try {
-        const res = await fetch("http://localhost:5000/api/assistant", 
+        const res = await fetch("/api/assistant", 
             {
                 method:"post",
                 headers: {'Content-Type': 'application/json'}, 

@@ -4,25 +4,25 @@ import gif from "../../../images/datetime.gif"
 
 export default function DateTime() {
     const [prevDate, setPrevDate] = useDateTimeLocalStorage()
-    const [dateTimer, setDateTimer] = React.useState("")
+    const [dateTimer, setDateTimer] = React.useState(0)
 
     React.useEffect(() => {
         const interval = setInterval(() => {
             const currDate = new Date()
-            setDateTimer(calcDateTime(currDate, prevDate))
+            setDateTimer(calcDateTime(currDate, new Date(prevDate)))
         }, 1000);
         return () => clearInterval(interval);
     }, [prevDate])
 
     function handleClick() {
         const newDate = new Date()
-        localStorage.setItem("datetime", newDate)
+        localStorage.setItem("datetime", newDate.toString())
         setDateTimer(0)
-        setPrevDate(newDate) 
+        setPrevDate(newDate.toString()) 
     }
 
-    function calcDateTime(currDate, prevDate) {
-        return Math.floor((currDate - prevDate)/1000)
+    function calcDateTime(currDate: Date, prevDate: Date) {
+        return Math.floor((currDate.valueOf() - prevDate.valueOf())/1000)
     }
 
     return (

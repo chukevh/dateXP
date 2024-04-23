@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom"
 
-export default function SideNavLink(props) {
-    const title = props.title
+interface SideNavLinkProps {
+    logo: React.ReactNode;
+    title: string;
+    link: string;
+}
+
+export default function SideNavLink(props: SideNavLinkProps) {
     const logo = props.logo
+    const title = props.title
     const link = props.link
 
     return (

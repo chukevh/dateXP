@@ -3,12 +3,12 @@ import React from "react";
 export function useDateTimeLocalStorage() {
     const [value, setValue] = React.useState("")
     const [init, setInit] = React.useState(false)
-    const dateTime = localStorage.getItem("datetime")
+    const dateTime: string | null = localStorage.getItem("datetime")
 
     if (init === false) {
         dateTime !== null 
-            ? setValue(new Date(dateTime)) 
-            : setValue(new Date())
+            ? setValue(new Date(dateTime).toString()) 
+            : setValue(new Date().toString())
         setInit(true)
     }
 
@@ -16,7 +16,7 @@ export function useDateTimeLocalStorage() {
         localStorage.setItem("datetime", value)
     }, [value])
 
-    return [value, setValue]
+    return [value, setValue] as const
 }
 
 export function useNoteLocalStorage() {
@@ -35,5 +35,5 @@ export function useNoteLocalStorage() {
         localStorage.setItem("note", value)
     }, [value])
 
-    return [value, setValue]
+    return [value, setValue] as const
 }

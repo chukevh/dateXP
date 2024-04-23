@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
+import { Spot } from "../../../../../interfaces/DateSpots.interface";
 
-export default function DateSpotCard(props) {
+interface DateSpotCardProps {
+    spot: Spot;
+}
+
+export default function DateSpotCard(props: DateSpotCardProps) {
     const spot = props.spot
 
     return (

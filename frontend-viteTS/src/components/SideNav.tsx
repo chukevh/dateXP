@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/datexplogo.png"
-import { IoMdHeart, IoMdHelpCircle, IoMdHome, IoMdLogIn, IoMdPerson, IoMdSettings, IoMdMenu } from "react-icons/io";
+import { IoMdHeart, IoMdHelpCircle, IoMdHome, IoMdLogIn, IoMdPerson, IoMdSettings } from "react-icons/io";
 import SideNavLink from "./SideNavLink";
 
 

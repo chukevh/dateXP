@@ -1,6 +1,6 @@
-export async function callDateAssistant(input) {
+export async function callDateAssistant(input: string) {
     try {
-        const res = await fetch("/api/assistant", 
+        const res = await fetch("http://localhost:5000/api/assistant", 
             {
                 method:"post",
                 headers: {'Content-Type': 'application/json'}, 
@@ -10,14 +10,14 @@ export async function callDateAssistant(input) {
         const data = await res.json()
 
         return data
-    } catch (error) {
-        console.log(error.message)
+    } catch (error: unknown) {
+        console.log(error)
     }
 
     return null
 }
 
-export async function callDateSpots(input) {
+export async function callDateSpots(input: any) {
     try {
         const res = await fetch("/api/assistant/spots", 
             {
@@ -29,14 +29,14 @@ export async function callDateSpots(input) {
         const data = await res.json()
 
         return data
-    } catch (error) {
-        console.log(error.message)
+    } catch (error: unknown) {
+        console.log(error)
     }
 
     return null
 }
 
-export async function callDateActivities(input) {
+export async function callDateActivities(input: any) {
     try {
         const res = await fetch("/api/assistant/activities", 
             {
@@ -48,8 +48,8 @@ export async function callDateActivities(input) {
         const data = await res.json()
 
         return data
-    } catch (error) {
-        console.log(error.message)
+    } catch (error: unknown) {
+        console.log(error)
     }
 
     return null

@@ -1,11 +1,10 @@
-import React from "react";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { useNoteLocalStorage } from "../../../hooks/useLocalStorage";
 
 export default function Notes() {
     const [note, setNote] = useNoteLocalStorage()
     
-    function handleChange(e) {
+    function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         setNote(e.target.value)
     }
 

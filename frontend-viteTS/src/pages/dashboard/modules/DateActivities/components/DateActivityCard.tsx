@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
+import { Activity } from "../../../../../interfaces/DateActivities.interface";
 
-export default function DateActivityCard(props) {
+interface DateActivityCardProps {
+    activity: Activity;
+}
+
+export default function DateActivityCard(props: DateActivityCardProps) {
     const activity = props.activity
 
     return (

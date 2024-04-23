@@ -1,4 +1,11 @@
-export default function DateLogMessage(props) {
+import { Log } from "../../../../../interfaces/DateAssistant.interface"
+
+interface DateLogMessageProps {
+    log: Log;
+    key: number;
+}
+
+export default function DateLogMessage(props: DateLogMessageProps) {
     const log = props.log
 
     if (log.role === "assistant") {

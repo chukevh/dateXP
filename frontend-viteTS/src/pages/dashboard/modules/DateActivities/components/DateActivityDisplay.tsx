@@ -1,12 +1,18 @@
 import DateActivityCard from "./DateActivityCard"
 import dateActivity from "../../../../../images/dateactivity.gif"
 import Loading from "../../../../../components/Loading"
+import { Activity } from "../../../../../interfaces/DateActivities.interface";
 
-export default function DateActivityDisplay(props) {
+interface DateActivityDisplayProps {
+    dateActivityData: any;
+    isSubmit: boolean;
+}
+
+export default function DateActivityDisplay(props: DateActivityDisplayProps) {
     const dateActivityData = props.dateActivityData
     const isSubmit = props.isSubmit
 
-    const dateSpotsElements = dateActivityData.map((activity, index) => {
+    const dateSpotsElements = dateActivityData.map((activity: Activity, index: number) => {
         return <DateActivityCard key={index} activity={activity}/>
     })
 

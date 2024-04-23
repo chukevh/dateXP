@@ -1,12 +1,18 @@
 import { capitalizeFirstLetter } from "../../../../../utils"
 
-export default function CuisineButtons(props) {
+interface CusineButtonsProps {
+    cuisineList: string[];
+    cuisineBtnState: Record<string, string>;
+    handleButtonClick: (e: any) => void;
+}
+
+export default function CuisineButtons(props: CusineButtonsProps) {
     const cuisineList = props.cuisineList
     const cuisineBtnState = props.cuisineBtnState
     
     // button state
     // default -> active -> disabled
-    function activeStyle(state) {
+    function activeStyle(state: string) {
         let style
         if (state === "active") {
             style = { background: "#27ae60", color: "white"}

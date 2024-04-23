@@ -16,7 +16,7 @@ export default function DateActivities() {
         "Culinary"
     ]
 
-    let activityBtnStateList = {}
+    let activityBtnStateList: Record<string, string> = {}
     activityList.forEach((activity) => {
         activityBtnStateList = {
             ...activityBtnStateList,
@@ -32,7 +32,7 @@ export default function DateActivities() {
         isSubmit: false
     })
 
-    function handleLocation(location) {
+    function handleLocation(location: any) {
         setForm(prevForm => {
             return {
                 ...prevForm,
@@ -41,7 +41,7 @@ export default function DateActivities() {
         })
     }
 
-    function handleChange(e) {
+    function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
         const {name, value} = e.target
         setForm(prevForm => {
             return {
@@ -51,7 +51,7 @@ export default function DateActivities() {
         })
     }
 
-    function handleButtonClick(e) {
+    function handleButtonClick(e: any) {
         const {name, value} = e.target
         let newValue = null
         switch (value) {
@@ -77,7 +77,7 @@ export default function DateActivities() {
         setActivityBtnState(activityBtnStateList)
     }
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault()
         setForm(prevForm => {
             return {
@@ -115,7 +115,7 @@ export default function DateActivities() {
                     <div className="date-spot-details-container">
                         <Autocomplete
                         className="date-spots-form-location"
-                            apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+                            apiKey={import.meta.env.VITE_GOOGLE_API_KEY}
                             onPlaceSelected={(location) => handleLocation(location)}
                         />
                         <select 

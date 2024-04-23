@@ -1,6 +1,8 @@
 import React from "react"
 import { callDateAssistant } from "../../../../api"
 import { DateAssistantDisplay } from "./components/DateAssistantDisplay"
+import { Log } from "../../../../interfaces/DateAssistant.interface"
+ 
 
 export default function DateAssistant() {
     const [input, setInput] = React.useState("")
@@ -11,11 +13,11 @@ export default function DateAssistant() {
         }
     ])
 
-    function handleChange(e) {
+    function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         setInput(e.target.value)
     }
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (input.trim().length > 0) {
@@ -34,7 +36,7 @@ export default function DateAssistant() {
         }
     }
 
-    function addToDateLog(log) {
+    function addToDateLog(log: Log) {
         setDateLog(prevLog => {
             return [
                 ...prevLog,

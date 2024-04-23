@@ -1,6 +1,11 @@
+import { Log } from "../../../../../interfaces/DateAssistant.interface"
 import DateLogMessage from "./DateLogMessage"
 
-export function DateAssistantDisplay(props) {
+interface DateAssistantDisplayProps {
+    dateLog: Log[]
+}
+
+export function DateAssistantDisplay(props: DateAssistantDisplayProps) {
     const dateLog = props.dateLog
 
     const dateAssistantElements = dateLog.map((log,index) => {

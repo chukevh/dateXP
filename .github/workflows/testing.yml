@@ -42,7 +42,7 @@ jobs:
             OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
             PORT=${{ secrets.PORT }}
           push: true
-          tags: chukevh/datexp-backend:latest
+          tags: chukevh/datexp-server:latest
   frontend-tests:
     runs-on: ubuntu-latest
     defaults:

@@ -1,18 +1,19 @@
 name: Unit Tests
 on: [push]
 jobs:
-    tests:
-        runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: ./server
-        env:
-          OPEN_AI_KEY: ${{ secrets.OPEN_AI_KEY }}
-          PORT: ${{ secrets.PORT }}
-        steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
-              with:
-                node-version: '20'
-            - run: npm install
-            - run: npm test
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+    environment: env
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+
+      - run: npm test
+
+

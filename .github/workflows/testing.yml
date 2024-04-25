@@ -29,7 +29,8 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm test
-  build:
+  frontend-build:
+    needs: frontend-tests
     runs-on: ubuntu-latest
     steps:
       -
@@ -49,7 +50,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: "{{defaultContext}}:frontend" 
-          build-args: "VITE_GOOGLE_API_KEY=AIzaSyA1Z6aZf4dOLU706a79e99kLf3WA_n3qHE"
+          build-args: |
+            "VITE_GOOGLE_API_KEY=AIzaSyA1Z6aZf4dOLU706a79e99kLf3WA_n3qHE"
           push: true
           tags: chukevh/datexp-frontend:latest
 

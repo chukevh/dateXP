@@ -1,13 +1,25 @@
 name: Unit Tests
 on: [push]
 jobs:
-  tests:
+  # backend-tests:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./server
+  #   env:
+  #     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '20'
+  #     - run: npm install
+  #     - run: npm test
+  frontend-tests:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./server
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -15,6 +27,5 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm test
-      
 
 

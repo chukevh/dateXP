@@ -6,14 +6,13 @@ jobs:
     defaults:
       run:
         working-directory: ./server
-    environment: env
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - run: npm install
-      - run: echo "The PORT key is ${{ secrets.TEST }}"
+      - run: echo "The PORT key is ${{ secrets.PORT }}"
       - run: npm test
       
 

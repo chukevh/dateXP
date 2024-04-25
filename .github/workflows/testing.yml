@@ -6,6 +6,9 @@ jobs:
         defaults:
           run:
             working-directory: ./server
+        env:
+          OPEN_AI_KEY: ${{ secrets.OPEN_AI_KEY }}
+          PORT: ${{ secrets.PORT }}
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4

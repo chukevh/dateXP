@@ -49,6 +49,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: "{{defaultContext}}:frontend" 
+          build-args: "VITE_GOOGLE_API_KEY=AIzaSyA1Z6aZf4dOLU706a79e99kLf3WA_n3qHE"
           push: true
           tags: chukevh/datexp-frontend:latest
 

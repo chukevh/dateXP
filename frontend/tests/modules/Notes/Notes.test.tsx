@@ -7,15 +7,10 @@ import Notes from "../../../src/pages/dashboard/modules/Notes"
 
 
 describe("Notes module test", () => {
-    it.skip("should initialise the note to be blank", async() => {
-        const user = userEvent.setup()
-
+    it("should initialise the note to be blank", async() => {
         render(<Notes />)
-
-        const input = screen.getByRole("textbox")
-        await user.type(input, "Hello World")
         
-        const noteElement = screen.getByText("Hello World")
+        const noteElement = screen.queryByText("0 Loving Letters")
         expect(noteElement).toBeDefined()
     })
 

@@ -31,6 +31,7 @@ export default function Notes() {
                         size='1.3rem'
                         onClick={handleReset}
                         className="reset-btn"
+                        aria-label="reset-btn"
                     />
                 </div>
             </div>

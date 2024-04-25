@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
-      - run: echo "The PORT key is ${{ secrets.PORT }}"
+      - run: echo "The PORT key is ${{ secrets.TEST }}"
       - run: npm test
       
 

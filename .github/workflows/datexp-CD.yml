@@ -15,11 +15,11 @@ jobs:
         env:
             PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
             HOSTNAME: ${{secrets.SSH_HOST}}
-          run: |
-            echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
-            ssh -i private_key ${HOSTNAME}
-            docker compose stop
-            docker compose rm -f
-            docker compose pull
-            docker compose up -d
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
+          ssh -i private_key ${HOSTNAME}
+          docker compose stop
+          docker compose rm -f
+          docker compose pull
+          docker compose up -d
 

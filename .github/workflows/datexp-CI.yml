@@ -1,4 +1,4 @@
-name: Unit Tests
+name: datexp-CI
 on:
   push:
     branches: [ "master" ]

@@ -17,7 +17,9 @@ jobs:
             HOSTNAME: ${{secrets.SSH_HOST}}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
+          echo "test"
           ssh -i private_key ${HOSTNAME}
+          cd app/dateXP
           docker compose stop
           docker compose rm -f
           docker compose pull

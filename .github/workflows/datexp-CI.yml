@@ -1,7 +1,6 @@
 name: datexp CI
 on:
-  pull_request:
-  # push:
+  push:
     branches: [ "master" ]
 jobs:
   backend-tests:

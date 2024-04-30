@@ -1,10 +1,8 @@
 name: datexp CD
 on:
-  push:
-    branches: [ "master" ]
-  # workflow_run:
-  #   workflows: ["datexp CI"]
-  #   types: [completed]
+  workflow_run:
+    workflows: ["datexp CI"]
+    types: [completed]
 
 jobs:
   on-CI-success:
@@ -19,7 +17,6 @@ jobs:
             HOSTNAME: ${{ secrets.SSH_HOST }}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
-          echo "test"
           ssh -o StrictHostKeyChecking=no -i private_key ${HOSTNAME} << EOF
             cd app/dateXP
             docker compose stop

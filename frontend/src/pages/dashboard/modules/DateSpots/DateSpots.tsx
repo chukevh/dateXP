@@ -97,7 +97,7 @@ export default function DateSpots() {
 
         const data = await callDateSpots(input)
         setDateSpotsDate(data.restaurants)
-
+        console.log(data)
         setForm(prevForm => {
             return {
                 ...prevForm,

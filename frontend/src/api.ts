@@ -11,10 +11,8 @@ export async function callDateAssistant(input: string) {
 
         return data
     } catch (error: unknown) {
-        console.log(error)
+        return error
     }
-
-    return null
 }
 
 export async function callDateSpots(input: any) {
@@ -30,10 +28,8 @@ export async function callDateSpots(input: any) {
 
         return data
     } catch (error: unknown) {
-        console.log(error)
+        return error
     }
-
-    return null
 }
 
 export async function callDateActivities(input: any) {
@@ -49,8 +45,6 @@ export async function callDateActivities(input: any) {
 
         return data
     } catch (error: unknown) {
-        console.log(error)
+        return error
     }
-
-    return null
 }

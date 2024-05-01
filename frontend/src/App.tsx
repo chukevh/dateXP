@@ -2,12 +2,19 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Dashboard from "./pages/dashboard/Dashboard";
 import UserLayout from "./layouts/UserLayout";
 import { Details } from "./pages/Details";
+import Error from "./components/Error";
 
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<UserLayout />}>
-    <Route index element={<Dashboard />} />
-    <Route path='details' element={<Details />} />
+    <Route 
+      index element={<Dashboard />} 
+      errorElement={<Error />}
+    />
+    <Route 
+      path='details' element={<Details />} 
+      errorElement={<Error />} 
+    />
   </Route>
 ))
 

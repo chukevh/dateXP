@@ -497,6 +497,17 @@ section {
 } */
 
 
+/* Error component */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  flex: 1;
+  background-color: #F4F2FD;
+}
+
+
 /* Media Settings */
 @media screen and (width <= 900px) {
   .dashboard-container {

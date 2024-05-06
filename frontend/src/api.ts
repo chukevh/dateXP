@@ -1,18 +1,24 @@
 export async function callDateAssistant(input: string) {
-    try {
-        const res = await fetch("/api/assistant", 
-            {
-                method:"post",
-                headers: {'Content-Type': 'application/json'}, 
-                body: JSON.stringify({ message: input }) 
-            }
-        )
-        const data = await res.json()
-
-        return data
-    } catch (error: unknown) {
-        return error
+    const res = await fetch("/api/assistant", 
+        {
+            method:"post",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({ message: input }) 
+        }
+    )
+    
+    const data = await res.json()
+    
+    if(!res.ok) {
+        throw {
+            message: data.message,
+            statusText: res.statusText,
+            status: res.status
+        }
     }
+    
+    return data
+
 }
 
 export async function callDateSpots(input: any) {
